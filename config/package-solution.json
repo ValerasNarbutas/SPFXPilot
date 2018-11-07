@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-pilot-client-side-solution",
+    "id": "97fe3ed8-4a00-4c39-9cf8-e97b1921d432",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-pilot.sppkg"
+  }
+}
