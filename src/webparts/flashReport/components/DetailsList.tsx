@@ -3,6 +3,7 @@ import { BaseComponent, createRef } from 'office-ui-fabric-react/lib/Utilities';
 import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
 import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
 import { IDetailsList, DetailsList, IColumn } from 'office-ui-fabric-react/lib/DetailsList';
+import { DropdownBasicExample } from './StatusDropDown';
 import { Checkbox } from 'office-ui-fabric-react/lib/Checkbox';
 //import './DetailsList.Grouped.Example.scss';
 
@@ -13,21 +14,24 @@ const _columns = [
     fieldName: 'name',
     minWidth: 100,
     maxWidth: 200,
-    isResizable: true
+    isResizable: true,
+    
+    
   },
   {
     key: 'color',
     name: 'Comments',
     fieldName: 'color',
     minWidth: 100,
-    maxWidth: 200
+    maxWidth: 200,
+    
   }
 ];
 const _items = [
   {
     key: 'a',
     name: 'Total programme benefits',
-    color: 'red'
+    color: 'colors'
   },
   {
     key: 'b',
@@ -56,8 +60,10 @@ export default class DetailsListGroupedExample extends BaseComponent<
   {
     items: {}[];
     showItemIndexInView: boolean;
+    
+  
   }
-> {
+  > {
   private _root = createRef<IDetailsList>();
 
   constructor(props: {}) {
@@ -66,15 +72,16 @@ export default class DetailsListGroupedExample extends BaseComponent<
     this.state = {
       items: _items,
       showItemIndexInView: false
+      
     };
   }
 
-//   public componentWillUnmount() {
-//     if (this.state.showItemIndexInView) {
-//       const itemIndexInView = this._root!.current!.getStartItemIndexInView();
-//       alert('unmounting, getting first item index that was in view: ' + itemIndexInView);
-//     }
-//   }
+  //   public componentWillUnmount() {
+  //     if (this.state.showItemIndexInView) {
+  //       const itemIndexInView = this._root!.current!.getStartItemIndexInView();
+  //       alert('unmounting, getting first item index that was in view: ' + itemIndexInView);
+  //     }
+  //   }
 
   public render() {
     const { items } = this.state;
@@ -88,7 +95,7 @@ export default class DetailsListGroupedExample extends BaseComponent<
             onChange={this._onShowItemIndexInViewChanged}
           />
         </div>
-        <DefaultButton onClick={this._addItem} text="Add an item" />
+        
         <DetailsList
           componentRef={this._root}
           items={items}
@@ -120,6 +127,7 @@ export default class DetailsListGroupedExample extends BaseComponent<
           }}
           onRenderItemColumn={this._onRenderColumn}
         />
+        <DefaultButton onClick={this._addItem} text="Add an item" />
       </Fabric>
     );
   }

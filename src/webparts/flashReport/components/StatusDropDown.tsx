@@ -27,22 +27,21 @@ export class DropdownBasicExample extends BaseComponent<
     return (
       <div className="docs-DropdownExample">
         <Dropdown
-          placeHolder="Select an Option"
-          label="Basic uncontrolled example:"
+          placeHolder="Select a month"
           id="Basicdrop1"
           ariaLabel="Basic dropdown example"
           options={[
-            { key: 'Header', text: 'Status', itemType: DropdownMenuItemType.Header },
-            { key: 'G', text: 'Green', title: 'Select green if all good' },
-            { key: 'O', text: 'Orange', title: 'Select orange if failing a bit' },
-            { key: 'R', text: 'Red', title: 'ITS gona BLOW!!!!', disabled: false }
+            { key: 'Header', text: 'Month selection', itemType: DropdownMenuItemType.Header },
+            { key: 'G', text: 'Month 1', title: 'Select green if all good' },
+            { key: 'O', text: 'Month 2 ', title: 'Select orange if failing a bit' },
+            { key: 'R', text: 'Month 3', title: 'ITS gona BLOW!!!!', disabled: false }
            
           ]}
           onFocus={this._log('onFocus called')}
           onBlur={this._log('onBlur called')}
          
         />
-        <PrimaryButton text="Set focus" onClick={this._onSetFocusButtonClicked} />
+       
         
       </div>
     );
